@@ -9,9 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DHKTPM15_AppStore_Nhom8">
-<!--        <activity-->
-<!--            android:name=".gui.CartDetail"-->
-<!--            android:exported="false" />-->
         <activity
             android:name=".gui.Greeting"
             android:exported="false" />
