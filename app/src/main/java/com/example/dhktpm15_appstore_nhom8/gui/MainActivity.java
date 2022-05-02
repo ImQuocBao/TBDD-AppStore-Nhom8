@@ -1,4 +1,4 @@
-package com.example.dhktpm15_appstore_nhom8;
+package com.example.dhktpm15_appstore_nhom8.gui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.dhktpm15_appstore_nhom8.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -3,11 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HP/AndroidStudioProjects/TBDD-AppStore-Nhom8/app/src/main/res/drawable/btn_menu.xml" value="0.1785" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/TBDD-AppStore-Nhom8/app/src/main/res/drawable/btn_menu1.xml" value="0.1785" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/TBDD-AppStore-Nhom8/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/TBDD-AppStore-Nhom8/app/src/main/res/layout/activity_main_detals.xml" value="0.1403985507246377" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/TBDD-AppStore-Nhom8/app/src/main/res/layout/row_items.xml" value="0.1403985507246377" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BaiTapNhomAndroid/TBDD-AppStore-Nhom8/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BaiTapNhomAndroid/TBDD-AppStore-Nhom8/app/src/main/res/drawable/custom_btnlogin.xml" value="0.2265" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BaiTapNhomAndroid/TBDD-AppStore-Nhom8/app/src/main/res/drawable/custom_input.xml" value="0.2265" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BaiTapNhomAndroid/TBDD-AppStore-Nhom8/app/src/main/res/drawable/ic_account.xml" value="0.2265" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BaiTapNhomAndroid/TBDD-AppStore-Nhom8/app/src/main/res/drawable/ic_baseline.xml" value="0.2265" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BaiTapNhomAndroid/TBDD-AppStore-Nhom8/app/src/main/res/drawable/ic_email.xml" value="0.2265" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BaiTapNhomAndroid/TBDD-AppStore-Nhom8/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BaiTapNhomAndroid/TBDD-AppStore-Nhom8/app/src/main/res/layout/activity_login.xml" value="0.176" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BaiTapNhomAndroid/TBDD-AppStore-Nhom8/app/src/main/res/layout/activity_main.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BaiTapNhomAndroid/TBDD-AppStore-Nhom8/app/src/main/res/layout/activity_register.xml" value="0.2210144927536232" />
       </map>
     </option>
   </component>
