@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DHKTPM15_AppStore_Nhom8">
         <activity
-            android:name=".gui.Greeting"
+            android:name=".gui.MainActivity"
             android:exported="false" />
         <activity
             android:name=".gui.LoginActivity"
@@ -25,7 +25,7 @@
             android:name=".gui.SushiDetals"
             android:exported="false" />
         <activity
-            android:name=".gui.MainActivity"
+            android:name=".gui.Greeting"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
