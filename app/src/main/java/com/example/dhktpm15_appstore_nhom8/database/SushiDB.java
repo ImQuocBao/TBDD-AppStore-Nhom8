@@ -1,14 +1,14 @@
-package com.example.dhktpm15_appstore_nhom8;
+package com.example.dhktpm15_appstore_nhom8.database;
 
 import android.content.Context;
 
-import androidx.annotation.NonNull;
 import androidx.room.Database;
-import androidx.room.DatabaseConfiguration;
-import androidx.room.InvalidationTracker;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.sqlite.db.SupportSQLiteOpenHelper;
+
+import com.example.dhktpm15_appstore_nhom8.dao.SushiDao;
+import com.example.dhktpm15_appstore_nhom8.entity.Sushi;
+
 @Database(entities = {Sushi.class}, version = 1)
 public abstract class SushiDB extends RoomDatabase {
 

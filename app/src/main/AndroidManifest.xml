@@ -13,7 +13,19 @@
             android:name=".gui.Greeting"
             android:exported="false" />
         <activity
+            android:name=".gui.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gui.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".gui.CartDetail"
+            android:exported="false" />
+        <activity
+            android:name=".gui.SushiDetals"
+            android:exported="false" />
+        <activity
+            android:name=".gui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

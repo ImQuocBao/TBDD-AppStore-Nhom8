@@ -1,8 +1,10 @@
-package com.example.dhktpm15_appstore_nhom8;
+package com.example.dhktpm15_appstore_nhom8.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+
+import com.example.dhktpm15_appstore_nhom8.entity.Sushi;
 
 import java.util.List;
 

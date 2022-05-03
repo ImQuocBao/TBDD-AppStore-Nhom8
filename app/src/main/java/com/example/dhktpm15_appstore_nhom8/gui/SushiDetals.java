@@ -1,4 +1,4 @@
-package com.example.dhktpm15_appstore_nhom8;
+package com.example.dhktpm15_appstore_nhom8.gui;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -7,6 +7,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dhktpm15_appstore_nhom8.R;
 import com.google.android.material.resources.TextAppearance;
 
 public class SushiDetals extends AppCompatActivity {
@@ -25,13 +26,9 @@ public class SushiDetals extends AppCompatActivity {
         TextView txtDesView=findViewById(R.id.txtDes);
         ImageView imgViewMain=findViewById(R.id.imgMain);
 
-
         txtNameView.setText(txtName);
         txtPriceView.setText(txtPrice);
         txtDesView.setText(txtDes);
         imgViewMain.setImageResource(imgMain);
-
-
-
     }
 }

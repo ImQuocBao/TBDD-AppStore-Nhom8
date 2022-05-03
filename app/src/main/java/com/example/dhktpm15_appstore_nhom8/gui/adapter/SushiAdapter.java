@@ -1,4 +1,4 @@
-package com.example.dhktpm15_appstore_nhom8;
+package com.example.dhktpm15_appstore_nhom8.gui.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.dhktpm15_appstore_nhom8.R;
+import com.example.dhktpm15_appstore_nhom8.entity.Sushi;
 
 import java.util.List;
 
@@ -25,7 +28,6 @@ public class SushiAdapter extends BaseAdapter {
     @Override
     public int getCount() {
       return   listSushi.size();
-
     }
 
     @Override

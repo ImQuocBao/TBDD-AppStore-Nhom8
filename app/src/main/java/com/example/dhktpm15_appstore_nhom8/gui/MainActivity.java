@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.dhktpm15_appstore_nhom8.R;
+import com.example.dhktpm15_appstore_nhom8.database.SushiDB;
+import com.example.dhktpm15_appstore_nhom8.entity.Sushi;
+import com.example.dhktpm15_appstore_nhom8.gui.adapter.SushiAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,12 +62,5 @@ public class MainActivity extends AppCompatActivity {
         ImageButton2=findViewById(R.id.imageButton2);
         ImageButton3=findViewById(R.id.imageButton3);
         ImageButton4=findViewById(R.id.imageButton4);
-
-
-
-
-
     }
-
-
 }
