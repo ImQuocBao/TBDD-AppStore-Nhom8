@@ -7,7 +7,7 @@
     android:background="#232323"
     android:backgroundTint="#232323"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".gui.LoginActivity">
 
     <TextView
         android:id="@+id/textView"
