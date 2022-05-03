@@ -4,9 +4,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "Sushi")
 public class Sushi {
-    @PrimaryKey
+
+    @PrimaryKey(autoGenerate = true)
+    public int uid;
     @ColumnInfo(name = "img")
     private int img;
     @ColumnInfo(name="name")
@@ -20,17 +22,19 @@ public class Sushi {
 
     }
 
-    public Sushi(int img, String name, String price) {
-        this.img = img;
-        this.name = name;
-        this.price = price;
-    }
-
     public Sushi(int img, String name, String price, String des) {
         this.img = img;
         this.name = name;
         this.price = price;
         this.des = des;
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 
     public String getDes() {

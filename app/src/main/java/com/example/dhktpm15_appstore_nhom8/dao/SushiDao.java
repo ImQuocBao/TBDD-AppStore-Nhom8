@@ -10,8 +10,10 @@ import java.util.List;
 
 @Dao
 public interface SushiDao {
-    @Query("SELECT * FROM sushi")
+
+    @Query("SELECT * FROM Sushi")
     List<Sushi> getAll();
+
     @Insert
-    void insertAll(Sushi sushi);
+    void insertSushi(Sushi sushi);
 }

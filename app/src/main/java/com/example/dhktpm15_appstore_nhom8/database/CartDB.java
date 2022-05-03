@@ -7,17 +7,16 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.dhktpm15_appstore_nhom8.dao.SushiDao;
-import com.example.dhktpm15_appstore_nhom8.entity.Sushi;
 
-@Database(entities = {Sushi.class}, version = 1)
-public abstract class SushiDB extends RoomDatabase {
+//@Database(entities = {class}, version = 1)
+public abstract class CartDB extends RoomDatabase {
 
     private static final String DATABASE_NAME = "Sushi.db";
-    private static SushiDB instance;
+    private static CartDB instance;
 
-    public static synchronized SushiDB getInstance(Context context) {
+    public static synchronized CartDB getInstance(Context context) {
         if(instance == null){
-            instance = Room.databaseBuilder(context.getApplicationContext(), SushiDB.class, DATABASE_NAME)
+            instance = Room.databaseBuilder(context.getApplicationContext(), CartDB.class, DATABASE_NAME)
                     .allowMainThreadQueries()
                     .build();
         }
