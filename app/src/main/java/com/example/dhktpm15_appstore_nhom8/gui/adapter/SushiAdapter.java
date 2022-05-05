@@ -27,7 +27,7 @@ public class SushiAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-      return   listSushi.size();
+      return listSushi.size();
     }
 
     @Override
@@ -42,18 +42,17 @@ public class SushiAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         view = inflater.inflate(layout, null);
 
-        TextView tvName=view.findViewById(R.id.tvName);
-        TextView tvPrice=view.findViewById(R.id.tvPrice);
-        ImageView img=view.findViewById(R.id.imgView_main);
+        TextView tvName = view.findViewById(R.id.tvName);
+        TextView tvPrice = view.findViewById(R.id.tvPrice);
+        ImageView img = view.findViewById(R.id.imgView_main);
 
-        Sushi itemsushi=listSushi.get(i);
-        tvName.setText(itemsushi.getName());
-        tvPrice.setText(itemsushi.getPrice());
-        img.setImageResource(itemsushi.getImg());
+        Sushi itemSushi = listSushi.get(i);
+        tvName.setText(itemSushi.getName());
+        tvPrice.setText(itemSushi.getPrice());
+        img.setImageResource(itemSushi.getImg());
 
         return view;
     }

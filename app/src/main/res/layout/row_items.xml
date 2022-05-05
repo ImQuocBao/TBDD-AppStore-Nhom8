@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#232323">
+    android:background="#232323"
+    android:minWidth="200sp">
 
     <ImageView
         android:id="@+id/imgView_main"
@@ -26,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:text="Sake Furai"
         android:textColor="#F8E5E5"
         android:textSize="20dp"
@@ -42,29 +43,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView_des"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="44dp"
         android:text="$10.00"
         android:textColor="#AE1515"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/img_add"
         app:layout_constraintEnd_toEndOf="@+id/tvName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvName"
-        app:layout_constraintTop_toTopOf="@+id/tvName"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageButton
-        android:id="@+id/img_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="56dp"
-        android:background="#02FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.019"
-        app:layout_constraintStart_toEndOf="@+id/tvPrice"
-        app:layout_constraintTop_toBottomOf="@+id/imgView_main"
-        app:srcCompat="@drawable/group_3" />
+        app:layout_constraintTop_toTopOf="@+id/tvName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,8 +12,11 @@ import java.util.List;
 public interface SushiDao {
 
     @Query("SELECT * FROM Sushi")
-    List<Sushi> getAll();
+    public List<Sushi> getAll();
 
     @Insert
     void insertSushi(Sushi sushi);
+
+    @Query("SELECT * FROM Sushi WHERE uid = :uid")
+    Sushi getSushiFromId(int uid);
 }

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DHKTPM15_AppStore_Nhom8">
         <activity
+            android:name=".gui.SushiDetails"
+            android:exported="false" />
+        <activity
             android:name=".gui.MainActivity"
             android:exported="false" />
         <activity
@@ -20,9 +23,6 @@
             android:exported="false" />
         <activity
             android:name=".gui.CartDetail"
-            android:exported="false" />
-        <activity
-            android:name=".gui.SushiDetals"
             android:exported="false" />
         <activity
             android:name=".gui.Greeting"

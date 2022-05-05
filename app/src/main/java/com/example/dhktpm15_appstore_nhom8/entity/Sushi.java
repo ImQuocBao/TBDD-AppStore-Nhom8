@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey;
 public class Sushi {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="uid")
     public int uid;
     @ColumnInfo(name = "img")
     private int img;

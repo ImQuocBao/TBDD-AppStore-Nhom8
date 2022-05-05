@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".gui.SushiDetails"
     android:background="#232323"
-    tools:context=".DetailsDonut">
+    >
 
     <ImageView
         android:id="@+id/imgMain"
-        android:layout_width="254dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="269dp"
+        android:layout_height="217dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:text="Unagi Roll"
         android:textColor="#E4DEDE"
         android:textSize="30dp"
@@ -55,23 +56,26 @@
         app:layout_constraintTop_toTopOf="@+id/txtName" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="364dp"
-        android:layout_height="55dp"
+        android:id="@+id/btnAdd"
+        android:layout_width="276dp"
+        android:layout_height="56dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="#E31511"
         android:text="Add to cart"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/edtCount"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edtCount"
+        app:layout_constraintVertical_bias="0.304" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
         android:text="Ingredients"
         android:textColor="#F6EBEB"
         android:textSize="20dp"
@@ -93,7 +97,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:text="Nori seaweed"
         android:textColor="#ECE1E1"
         android:textSize="18dp"
@@ -124,4 +128,20 @@
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="@+id/imageButton" />
 
+    <EditText
+        android:id="@+id/edtCount"
+        android:layout_width="61dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/custom_edittext_count"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.304" />
 </androidx.constraintlayout.widget.ConstraintLayout>

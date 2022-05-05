@@ -57,17 +57,25 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        this.initUI();
+        initUI();
 
         sushiAdapter = new SushiAdapter(this, R.layout.row_items, listSushi);
         gridView.setAdapter(sushiAdapter);
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                view.setBackgroundColor(getResources().getColor(R.color.black));
-                oldViewSelected = view;
-                System.out.println(i);
-                itemSelected = i;
+
+                Intent intent = new Intent(MainActivity.this, SushiDetails.class);
+                Bundle b = new Bundle();
+                b.putString("name", listSushi.get(i).getName());
+//                b.putString("des", productList.get(i).getDonutDes());
+                b.putString("price", listSushi.get(i).getPrice());
+                b.putInt("img", listSushi.get(i).getImg());
+                intent.putExtras(b);
+
+                startActivity(intent);
+
             }
         });
 
@@ -95,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void addDataToFireStore() {
         for (Sushi ss: listSushi) {
-
             Map<String, Object> sushi = new HashMap<>();
             sushi.put("id", ss.getUid());
             sushi.put("name", ss.getName());
@@ -122,21 +129,22 @@ public class MainActivity extends AppCompatActivity {
 
     private void initUI() {
         tvName = findViewById(R.id.textView);
-        tvDescription=findViewById(R.id.textView2);
-        ImageButton2=findViewById(R.id.imageButton2);
-        gridView=findViewById(R.id.gdView);
+        tvDescription = findViewById(R.id.textView2);
+        ImageButton2 = findViewById(R.id.imageButton2);
+        gridView = findViewById(R.id.gv_suShi);
 
         listSushi = new ArrayList<Sushi>();
         if(getAllSushiFromLocal().size() < 1) {
             listSushi = readDataFromFirebase();
+
             addSushiToLocalUsingRoom(listSushi);
         }
         listSushi = getAllSushiFromLocal();
 //        addDataToFireStore();
 
-        for (Sushi ss: listSushi) {
-            Log.d("item" + ss.getUid(), ss.getName());
-        }
+//        for (Sushi ss: listSushi) {
+//            Log.d("item" + ss.getUid(), ss.getName());
+//        }
     }
 
     public List<Sushi> readDataFromFirebase() {

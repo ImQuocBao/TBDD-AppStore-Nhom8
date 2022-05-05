@@ -6,12 +6,13 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.dhktpm15_appstore_nhom8.dao.SushiDao;
+import com.example.dhktpm15_appstore_nhom8.dao.CartDao;
+import com.example.dhktpm15_appstore_nhom8.entity.Cart;
 
-//@Database(entities = {class}, version = 1)
+@Database(entities = {Cart.class}, version = 1)
 public abstract class CartDB extends RoomDatabase {
 
-    private static final String DATABASE_NAME = "Sushi.db";
+    private static final String DATABASE_NAME = "CartDB.db";
     private static CartDB instance;
 
     public static synchronized CartDB getInstance(Context context) {
@@ -23,5 +24,5 @@ public abstract class CartDB extends RoomDatabase {
         return instance;
     }
 
-    public abstract SushiDao sushiDao();
+    public abstract CartDao cartDao();
 }
