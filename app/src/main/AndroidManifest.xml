@@ -14,7 +14,6 @@
             android:exported="false" />
         <activity
             android:name=".gui.MainActivity"
-            android:theme="@style/AppThem.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".gui.LoginActivity"
