@@ -134,43 +134,37 @@ public class MainActivity extends AppCompatActivity {
         gridView = findViewById(R.id.gv_suShi);
 
         listSushi = new ArrayList<Sushi>();
+        List<Sushi> arrSushi = new ArrayList<Sushi>();
         if(getAllSushiFromLocal().size() < 1) {
-            listSushi = readDataFromFirebase();
+            db.collection("sushi")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    int id = Integer.parseInt(document.getData().get("id").toString());
+                                    int img = Integer.parseInt(document.getData().get("img").toString());
+                                    String name = document.getData().get("name").toString();
+                                    String price = document.getData().get("price").toString();
+                                    String des = document.getData().get("des").toString();
+
+                                    Sushi ss = new Sushi( img, name, price, des);
+                                    ss.setUid(id);
+                                    arrSushi.add(ss);
+                                }
+                                listSushi.clear();
+                                listSushi.addAll(arrSushi);
+                                sushiAdapter.notifyDataSetChanged();
+                            } else {
+                                Log.w("Error", "Error getting documents.", task.getException());
+                            }
+                        }
+                    });
 
             addSushiToLocalUsingRoom(listSushi);
+        } else {
+            listSushi = getAllSushiFromLocal();
         }
-        listSushi = getAllSushiFromLocal();
-//        addDataToFireStore();
-
-//        for (Sushi ss: listSushi) {
-//            Log.d("item" + ss.getUid(), ss.getName());
-//        }
-    }
-
-    public List<Sushi> readDataFromFirebase() {
-        List<Sushi> arrSushi = new ArrayList<Sushi>();
-        db.collection("sushi")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                int id = Integer.parseInt(document.getData().get("id").toString());
-                                int img = Integer.parseInt(document.getData().get("img").toString());
-                                String name = document.getData().get("name").toString();
-                                String price = document.getData().get("price").toString();
-                                String des = document.getData().get("des").toString();
-
-                                Sushi ss = new Sushi( img, name, price, des);
-                                ss.setUid(id);
-                                arrSushi.add(ss);
-                            }
-                        } else {
-                            Log.w("Error", "Error getting documents.", task.getException());
-                        }
-                    }
-                });
-        return arrSushi;
     }
 }
