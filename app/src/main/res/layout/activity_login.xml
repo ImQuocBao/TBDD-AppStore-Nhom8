@@ -129,6 +129,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:srcCompat="@drawable/kisspng_sushi_logo_graphic_design_sushi_roll_5b2bfd0e1d2637_8099350715296094861194" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
