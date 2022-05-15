@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DHKTPM15_AppStore_Nhom8">
         <activity
+            android:name=".gui.AddSushi"
+            android:exported="false" />
+        <activity
             android:name=".gui.SushiDetails"
             android:exported="false" />
         <activity

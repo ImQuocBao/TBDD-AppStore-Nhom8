@@ -1,5 +1,6 @@
 package com.example.dhktpm15_appstore_nhom8.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -7,45 +8,95 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "CartDB")
 public class Cart {
 
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name ="uid")
-    private int uid;
+    @PrimaryKey(autoGenerate = false)
+    @ColumnInfo(name = "id")
+    @NonNull
+    private String id;
 
-    @ColumnInfo(name ="sushi")
-    private int sushiId;
+    @ColumnInfo(name = "name")
+    private String name;
 
-    @ColumnInfo(name = "count")
-    private int count;
+    @ColumnInfo(name = "image")
+    private int image;
 
-    public int getSushiId() {
-        return sushiId;
-    }
+    @ColumnInfo(name = "price")
+    private String price;
 
-    public void setSushiId(int sushiId) {
-        this.sushiId = sushiId;
+    @ColumnInfo(name = "quantity")
+    private int quantity;
+
+    @ColumnInfo(name = "totalPrice")
+    private float totalPrice;
+
+    public Cart(String key, String name, int image, String price, int quantity, float totalPrice) {
+        this.id = key;
+        this.name = name;
+        this.image = image;
+        this.price = price;
+        this.quantity = quantity;
+        this.totalPrice = totalPrice;
     }
 
     public Cart() {
     }
 
-    public Cart(int sushiId, int count) {
-        this.sushiId = sushiId;
-        this.count = count;
+    public String getId() {
+        return id;
     }
 
-    public int getUid() {
-        return uid;
+    public void setId(String key) {
+        this.id = key;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public String getName() {
+        return name;
     }
 
-    public int getCount() {
-        return count;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public float getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(float totalQuantity) {
+        this.totalPrice = totalQuantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", image=" + image +
+                ", price='" + price + '\'' +
+                ", quantity=" + quantity +
+                ", totalPrice=" + totalPrice +
+                '}';
     }
 }

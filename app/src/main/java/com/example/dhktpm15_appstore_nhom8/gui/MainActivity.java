@@ -65,17 +65,37 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
                 Intent intent = new Intent(MainActivity.this, SushiDetails.class);
                 Bundle b = new Bundle();
                 b.putString("name", listSushi.get(i).getName());
-//                b.putString("des", productList.get(i).getDonutDes());
                 b.putString("price", listSushi.get(i).getPrice());
                 b.putInt("img", listSushi.get(i).getImg());
+                b.putString("id", listSushi.get(i).getUid() + "");
+                b.putInt("size", listSushi.size());
                 intent.putExtras(b);
-
                 startActivity(intent);
 
+            }
+        });
+
+        ImageButton btnCart = findViewById(R.id.btnCart);
+        btnCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CartDetail.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnAdd = findViewById(R.id.btnAddItem);
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddSushi.class);
+                Bundle b = new Bundle();
+                b.putInt("id", listSushi.size());
+                intent.putExtras(b);
+                startActivity(intent);
             }
         });
 
@@ -130,12 +150,19 @@ public class MainActivity extends AppCompatActivity {
     private void initUI() {
         tvName = findViewById(R.id.textView);
         tvDescription = findViewById(R.id.textView2);
-        ImageButton2 = findViewById(R.id.imageButton2);
         gridView = findViewById(R.id.gv_suShi);
 
         listSushi = new ArrayList<Sushi>();
-        List<Sushi> arrSushi = new ArrayList<Sushi>();
+//        listSushi.add(new Sushi(1,R.drawable.sushi1, "Combo 1", "99.99", ""));
+//        listSushi.add(new Sushi(2,R.drawable.sushi2, "Combo 2", "79.39", ""));
+//        listSushi.add(new Sushi(3,R.drawable.sushi3, "Sashimi", "120.0", ""));
+//        listSushi.add(new Sushi(4,R.drawable.sushi4, "Combo 3", "199.99", ""));
+//        listSushi.add(new Sushi(5,R.drawable.sushi5, "Combo 4", "399.99", ""));
+//        listSushi.add(new Sushi(6,R.drawable.sushi6, "Combo 5", "39.99", ""));
+//
+//        addDataToFireStore();
         if(getAllSushiFromLocal().size() < 1) {
+            List<Sushi> arrSushi = new ArrayList<Sushi>();
             db.collection("sushi")
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -147,9 +174,8 @@ public class MainActivity extends AppCompatActivity {
                                     int img = Integer.parseInt(document.getData().get("img").toString());
                                     String name = document.getData().get("name").toString();
                                     String price = document.getData().get("price").toString();
-                                    String des = document.getData().get("des").toString();
 
-                                    Sushi ss = new Sushi( img, name, price, des);
+                                    Sushi ss = new Sushi(id, img, name, price, "");
                                     ss.setUid(id);
                                     arrSushi.add(ss);
                                 }
@@ -163,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                     });
 
             addSushiToLocalUsingRoom(listSushi);
-        } else {
+        }else {
             listSushi = getAllSushiFromLocal();
         }
     }

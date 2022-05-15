@@ -2,6 +2,7 @@ package com.example.dhktpm15_appstore_nhom8.gui.adapter;
 
 import android.content.Context;
 import android.media.Image;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,9 +51,14 @@ public class CartAdapter extends BaseAdapter {
         ImageView imgMain = view.findViewById(R.id.imageView2);
         TextView txtName = view.findViewById(R.id.txtName);
         TextView txtPrice = view.findViewById(R.id.txtPrice);
+        TextView txtQuan = view.findViewById(R.id.txtCount);
+        Cart cartItem = listCart.get(i);
 
-        txtName.setText("123");
-        txtPrice.setText("3111");
+        txtName.setText(cartItem.getName());
+        txtPrice.setText(cartItem.getPrice() + " $");
+        Log.d("cart", cartItem.toString());
+        imgMain.setImageResource(cartItem.getImage());
+        txtQuan.setText(cartItem.getQuantity() + "");
 
         return view;
     }

@@ -27,7 +27,7 @@ public class SushiAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-      return listSushi.size();
+        return listSushi.size();
     }
 
     @Override

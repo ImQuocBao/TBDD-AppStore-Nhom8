@@ -23,6 +23,14 @@ public class Sushi {
 
     }
 
+    public Sushi(int id,int img, String name, String price, String des) {
+        this.img = img;
+        this.uid = id;
+        this.name = name;
+        this.price = price;
+        this.des = des;
+    }
+
     public Sushi(int img, String name, String price, String des) {
         this.img = img;
         this.name = name;
