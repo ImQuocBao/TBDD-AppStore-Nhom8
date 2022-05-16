@@ -31,7 +31,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
 
-
         Button btn_register = findViewById(R.id.btnRegister);
         EditText edtName = findViewById(R.id.edtUser);
         EditText edtEmail = findViewById(R.id.edtEmail);
@@ -63,6 +62,8 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()) {
                                 Toast.makeText(RegisterActivity.this, "create success" , Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                startActivity(intent);
                             } else {
                                 Toast.makeText(RegisterActivity.this, "create Fail" , Toast.LENGTH_SHORT).show();
                             }
