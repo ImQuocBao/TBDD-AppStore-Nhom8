@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton btnCart = findViewById(R.id.btnCart);
+        ImageView btnCart = findViewById(R.id.btnCart);
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,17 +88,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btnAdd = findViewById(R.id.btnAddItem);
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AddSushi.class);
-                Bundle b = new Bundle();
-                b.putInt("id", listSushi.size());
-                intent.putExtras(b);
-                startActivity(intent);
-            }
-        });
+//        Button btnAdd = findViewById(R.id.btnAddItem);
+//        btnAdd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this, AddSushi.class);
+//                Bundle b = new Bundle();
+//                b.putInt("id", listSushi.size());
+//                intent.putExtras(b);
+//                startActivity(intent);
+//            }
+//        });
 
         Button btnLogOut = findViewById(R.id.btnSignOut);
         btnLogOut.setOnClickListener(new View.OnClickListener() {

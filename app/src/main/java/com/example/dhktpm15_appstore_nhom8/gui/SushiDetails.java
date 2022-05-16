@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,6 +48,15 @@ public class SushiDetails extends AppCompatActivity {
         ImageView imgViewMain = findViewById(R.id.imgMain);
         txtNameView.setText(txtName);
         txtPriceView.setText(txtPrice);
+
+        ImageButton btnBack = findViewById(R.id.imageButton);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SushiDetails.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Button btnAdd = findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {

@@ -35,28 +35,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <ImageButton
-        android:id="@+id/btnCart"
-        android:layout_width="51dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#00FFFFFF"
-        android:src="@drawable/group_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btnSignOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
         android:text="Sign Out"
-        app:layout_constraintBottom_toBottomOf="@+id/btnCart"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnCart"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <GridView
         android:id="@+id/gv_suShi"
@@ -68,14 +55,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <Button
-        android:id="@+id/btnAddItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+    <ImageView
+        android:id="@+id/btnCart"
+        android:layout_width="47dp"
+        android:layout_height="55dp"
         android:layout_marginEnd="16dp"
-        android:text="Add Item"
+        android:src="@drawable/pngwing_com"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSignOut"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/btnSignOut"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
