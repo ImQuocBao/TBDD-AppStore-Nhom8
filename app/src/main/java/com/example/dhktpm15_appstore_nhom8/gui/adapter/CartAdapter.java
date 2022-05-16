@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.dhktpm15_appstore_nhom8.R;
 import com.example.dhktpm15_appstore_nhom8.entity.Cart;
 
@@ -57,7 +58,9 @@ public class CartAdapter extends BaseAdapter {
         txtName.setText(cartItem.getName());
         txtPrice.setText(cartItem.getPrice() + " $");
         Log.d("cart", cartItem.toString());
-        imgMain.setImageResource(cartItem.getImage());
+
+        Glide.with(context).load(cartItem.getImage()).into(imgMain);
+
         txtQuan.setText(cartItem.getQuantity() + "");
 
         return view;

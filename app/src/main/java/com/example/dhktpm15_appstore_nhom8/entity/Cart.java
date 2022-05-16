@@ -17,7 +17,7 @@ public class Cart {
     private String name;
 
     @ColumnInfo(name = "image")
-    private int image;
+    private String image;
 
     @ColumnInfo(name = "price")
     private String price;
@@ -28,7 +28,7 @@ public class Cart {
     @ColumnInfo(name = "totalPrice")
     private float totalPrice;
 
-    public Cart(String key, String name, int image, String price, int quantity, float totalPrice) {
+    public Cart(String key, String name, String image, String price, int quantity, float totalPrice) {
         this.id = key;
         this.name = name;
         this.image = image;
@@ -56,11 +56,11 @@ public class Cart {
         this.name = name;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

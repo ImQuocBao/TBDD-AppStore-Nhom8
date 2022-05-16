@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.dhktpm15_appstore_nhom8.R;
 import com.example.dhktpm15_appstore_nhom8.entity.Sushi;
 
@@ -52,8 +53,8 @@ public class SushiAdapter extends BaseAdapter {
         Sushi itemSushi = listSushi.get(i);
         tvName.setText(itemSushi.getName());
         tvPrice.setText(itemSushi.getPrice());
-        img.setImageResource(itemSushi.getImg());
-
+//        img.setImageResource(itemSushi.getImg());
+        Glide.with(context).load(itemSushi.getImg()).into(img);
         return view;
     }
 }

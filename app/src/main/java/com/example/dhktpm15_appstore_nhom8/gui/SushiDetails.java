@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.dhktpm15_appstore_nhom8.R;
 import com.example.dhktpm15_appstore_nhom8.entity.Cart;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,7 +41,7 @@ public class SushiDetails extends AppCompatActivity {
         String txtName = getIntent().getExtras().getString("name");
         String txtPrice = getIntent().getExtras().getString("price");
         String id = getIntent().getExtras().getString("id");
-        int imgMain = getIntent().getExtras().getInt("img");
+        String imgMain = getIntent().getExtras().getString("img");
         Log.d("id" , id + "");
 
         TextView txtNameView = findViewById(R.id.txtName);
@@ -98,6 +99,7 @@ public class SushiDetails extends AppCompatActivity {
                                                     }
                                                 }
                                             });
+                                    startActivity(intent);
                                 }
                                 else {
                                     Cart cart = new Cart();
@@ -116,6 +118,7 @@ public class SushiDetails extends AppCompatActivity {
                                                     Log.d("Succes", "ADD THANH CONG");
                                                 }
                                             });
+                                    startActivity(intent);
                                 }
                             }
 
@@ -124,10 +127,11 @@ public class SushiDetails extends AppCompatActivity {
                             }
                         });
 
-                startActivity(intent);
+
             }
         });
 
-        imgViewMain.setImageResource(imgMain);
+//        imgViewMain.setImageResource(imgMain);
+        Glide.with(this).load(imgMain).into(imgViewMain);
     }
 }

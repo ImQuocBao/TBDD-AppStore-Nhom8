@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 Bundle b = new Bundle();
                 b.putString("name", listSushi.get(i).getName());
                 b.putString("price", listSushi.get(i).getPrice());
-                b.putInt("img", listSushi.get(i).getImg());
+                b.putString("img", listSushi.get(i).getImg());
                 b.putString("id", listSushi.get(i).getUid() + "");
                 b.putInt("size", listSushi.size());
                 intent.putExtras(b);
@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     int id = Integer.parseInt(document.getData().get("id").toString());
-                                    int img = Integer.parseInt(document.getData().get("img").toString());
+                                    String img = document.getData().get("img").toString();
                                     String name = document.getData().get("name").toString();
                                     String price = document.getData().get("price").toString();
 
@@ -180,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                                     ss.setUid(id);
                                     arrSushi.add(ss);
                                 }
+                                Log.d("Vo", "onComplete: " + arrSushi.toString());
                                 listSushi.clear();
                                 listSushi.addAll(arrSushi);
                                 sushiAdapter.notifyDataSetChanged();

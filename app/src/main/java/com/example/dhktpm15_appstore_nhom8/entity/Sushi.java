@@ -10,8 +10,8 @@ public class Sushi {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name="uid")
     public int uid;
-    @ColumnInfo(name = "img")
-    private int img;
+    @ColumnInfo(name = "image")
+    private String img;
     @ColumnInfo(name="name")
     private String name;
     @ColumnInfo(name = "price")
@@ -23,7 +23,7 @@ public class Sushi {
 
     }
 
-    public Sushi(int id,int img, String name, String price, String des) {
+    public Sushi(int id,String img, String name, String price, String des) {
         this.img = img;
         this.uid = id;
         this.name = name;
@@ -31,7 +31,7 @@ public class Sushi {
         this.des = des;
     }
 
-    public Sushi(int img, String name, String price, String des) {
+    public Sushi(String img, String name, String price, String des) {
         this.img = img;
         this.name = name;
         this.price = price;
@@ -54,7 +54,7 @@ public class Sushi {
         this.des = des;
     }
 
-    public int getImg() {
+    public String getImg() {
         return img;
     }
 
@@ -66,7 +66,7 @@ public class Sushi {
         return price;
     }
 
-    public void setImg(int img) {
+    public void setImg(String img) {
         this.img = img;
     }
 
